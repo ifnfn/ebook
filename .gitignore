@@ -1,0 +1,35 @@
+doc/_book
+*.taghl
+cscope.*
+.DS_Store
+*.sw?
+*.wav
+*.mp3
+*.yaml
+dist/
+!glide.yaml
+glide.lock
+phoenix
+debug
+taobao/debug.test
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
+.glide/
+cache/
+tools/tools
+books.json
+tools/books.json
+tools/books
+engines/taobao/debug.test
+chat/chat

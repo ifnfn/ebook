@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/__tests__": true,
+        "**/package-lock.json": true,
+        "**/.*config": true,
+        "**/.babelrc": true,
+        "**/*.lock": true,
+        "**/tools/cache": true
+    }
+}

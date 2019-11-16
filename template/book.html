@@ -1,0 +1,102 @@
+<html itemscope="" itemtype="http://schema.org/WebPage">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+    </title>
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="https://img3.doubanio.com/f/talion/50f7d50f2f898665f7ee8d2888545e01b164b6b4/css/card/base.css" rel="stylesheet">
+    <link href="https://img3.doubanio.com/f/talion/f90b75357702cac1b9560fb9856d9a827d6889ef/css/card/review_list.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://img3.doubanio.com/misc/mixed_static/40cb91d402770b74.css">
+
+    <link type="application/opensearchdescription+xml" rel="search" href="/opensearch" />
+</head>
+
+<body ontouchstart="" class="">
+    <div class="">
+        <div class="card">
+            <h1 class="title">{{ .book.Name }} </h1>
+            <section class="subject-info">
+                <div class="right">
+                    <img src="{{ .book.Image }}" alt="时间的果" class="cover">
+                </div>
+                <div class="left">
+                    <p class="rating">
+                        <span class="rating-stars" data-rating="85.0"><span class="rating-star rating-star-medium-full"></span>
+                        <span class="rating-star rating-star-medium-full"></span><span class="rating-star rating-star-medium-full"></span>
+                        <span class="rating-star rating-star-medium-full"></span>
+                        <span class="rating-star rating-star-medium-half"></span>
+                        </span>
+                        <strong>{{ .book.Rating }}</strong>
+                        <span>{{ .book.ReviewCount }}人评价</span>
+                    </p>
+
+                    <p class="meta">
+                        作者： {{ .book.Author }} / {{ .book.Time }}
+                    </p>
+                    <p class="meta">
+                        ISBN： {{ .book.Isbn }} / 格式： {{ .book.Formats }}
+                    </p>
+                </div>
+            </section>
+
+            <section class="subject-mark" data-type="book" data-id="{{ .book.ID }}">
+                <div class="mark-item">
+                    <a href="javascript:;" user-id="{{ .userID }}" class="my_favorite">
+                        {{ if .favor }}
+                            <span>已经关注</span>
+                        {{ else }}
+                            <span>加入关注</span>
+                        {{ end }}
+                    </a>
+                    <a href="javascript:;" user-id="{{ .userID }}" class="push_kindle">
+                        {{ if .download }}
+                            <span>已完成推进</span>
+                        {{ else }}
+                            <span>推送至 Kindle</span>
+                        {{ end }}
+                    </a>
+                </div>
+            </section>
+            <section class="subject-intro">
+                <h2>《{{ .book.Name }}》的内容简介</h2>
+                <div class="bd" style="position: static;">
+                    <p data-clamp="10">{{ .book.Content }}</p>
+                </div>
+            </section>
+            <div class="center">
+                <div id="dale_talion_subject_book_top" class="Advertisement"></div>
+            </div>
+
+
+
+            <div class="center">
+                <div id="dale_talion_subject_book_center" class="Advertisement"></div>
+            </div>
+
+            <section class="review-list">
+                <h2>《{{ .book.Name }}》的书评(25)</h2>
+                <div class=" bd ">
+                    <ul class="list ">
+                        {{with .book.Reviews}} {{ range . }}
+                        <li>
+                            {{ . | unescaped}}
+                        </li>
+                        {{end}}{{end}}
+                    </ul>
+                </div>
+            </section>
+
+            <div class="center ">
+                <div id="dale_talion_subject_book_after_reviews " class="Advertisement "></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://img3.doubanio.com/f/talion/ee8e0c54293aefb5709ececbdf082f8091ad5e49/js/card/zepto.min.js "></script>
+    <script src="https://img3.doubanio.com/f/talion/509b3fc50b1c20abd3d733d1426b5727910e55c3/js/card/main.js "></script>
+    <script src="/js/interest.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+####
+curl 'http://www.kindlepush.com/user/login' \
+-x "61.158.163.86:16816" \
+-H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Mobile Safari/537.36' \
+-H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+--data 'username=aa001%40sumfeel.com&password=aa001aa001&rememberMe=true'
+
+
+##########
+curl 'http://www.kindlepush.com/upload/download' \
+-x "61.158.163.86:16816" \
+-H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Mobile Safari/537.36' \
+-H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+--data 'resourceId=11259' 
+
+
+##########
+curl 'http://www.kindlepush.com/user/logout' \
+-x "61.158.163.86:16816" \
+-H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Mobile Safari/537.36' \
+-H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \

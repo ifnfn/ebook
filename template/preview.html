@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>电脑版图文详情</title>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="spm-id" content="a2141">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <link type="text/css" rel="stylesheet" href="./css/detail_new.css">
+    <style id="style-1-cropbar-clipper">
+        /* Copyright 2014 Evernote Corporation. All rights reserved. */
+        
+        .en-markup-crop-options {
+            top: 18px !important;
+            left: 50% !important;
+            margin-left: -100px !important;
+            width: 200px !important;
+            border: 2px rgba(255, 255, 255, .38) solid !important;
+            border-radius: 4px !important;
+        }
+        
+        .en-markup-crop-options div div:first-of-type {
+            margin-left: 0px !important;
+        }
+    </style>
+    <script type="text/javascript" async="" src="//g.alicdn.com/sd/data_sufei/1.4.3/aplus/index.js"></script>
+</head>
+
+<body data-spm="7690265">
+    <div class="des" id="J_des">
+        <div id="J_pages" class="des-pages">
+            {{range .}}
+            <div class="page_box">{{if eq .Key "image" }}
+                <img width="1238" height="" class="des-alimg " src={{ .Value }} style="background: none;"> {{else if eq .Key "text"}}
+                <p class="des-text">{{ .Value }}</p>{{end}}
+            </div>
+            {{end}}
+        </div>
+    </div>
+</body>
+
+</html>

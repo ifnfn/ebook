@@ -1,0 +1,143 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title>美丽相册</title>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="spm-id" content="a2141">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- 引入 Bootstrap -->
+    <style>
+        .lazy {
+            display: none;
+        }
+
+        .waterfall {
+            text-align: center;
+            margin: 0 auto;
+            padding-right: 0px;
+            padding-left: 0px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .thumbnail {
+            display: block;
+            padding: 0px;
+            line-height: 1.42857143;
+            background-color: #fff;
+            border: 0px solid #ddd;
+            border-radius: 4px;
+            -webkit-transition: border .2s ease-in-out;
+            -o-transition: border .2s ease-in-out;
+            transition: border .2s ease-in-out;
+        }
+
+        .col-4 {
+            width: 33.3%;
+            position: relative;
+            min-height: 1px;
+            float: left;
+            margin-bottom: 0px;
+            margin-right: 0px;
+            margin-left: 0px;
+            background: #fff;
+            margin-top: 0px;
+            padding: 2px 1px 0px 1px;
+        }
+
+        .footer {
+            background-color: #ffc0cb;
+        }
+
+        .fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<script>
+    var imgList = new Array();
+    (function () {      
+        function reviewImage(src) {
+            let url = "http://ifnfn.com:10088/images/swiper/" + src.substr(30, 20)
+            window.location.href = url
+            // window.location.href = src
+            window.navigate(url)
+        }
+
+        function onImgLoad() {
+            var imgs = document.getElementsByTagName('img');
+            for (var i = 0, l = imgs.length; i <= l; i++) {
+                var img = imgs.item(i);
+                var src = img.getAttribute('big-src');
+                if (src) {
+                    picURL = src + "&width=720";
+                    imgList.push(picURL);
+                    (function (src) {
+                        if (img.addEventListener) {
+                            img.addEventListener('click', function () {
+                                reviewImage(src);
+                            });
+                        } else if (img.attachEvent) {
+                            img.attachEvent('click', function () {
+                                reviewImage(src);
+                            });
+                        }
+                    })(picURL);
+                }
+            }
+        }
+
+        function footerPosition() {
+            $("footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight, //网页正文全文高度
+                winHeight = window.innerHeight; //可视窗口高度，不包括浏览器顶部工具栏
+            if (!(contentHeight > winHeight)) {
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("footer").addClass("fixed-bottom");
+            }
+        }
+
+        if (window.addEventListener) {
+            window.addEventListener('load', onImgLoad, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('load', onImgLoad);
+            window.attachEvent('onload', onImgLoad);
+        }
+
+        footerPosition();
+        $(window).resize(footerPosition);
+    })();
+</script>
+
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.lazyload.min.js"></script>
+
+<body>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <div id="container waterfall">
+        {{ range . }}
+        <div class="col-4 thumbnail">
+            <img class="lazy" src="/js/loading_spinner.gif" data-original="{{.PicURL}}&width=256&height=256" big-src="{{.PicURL}}" />
+        </div>
+        {{ end }}
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        $("img.lazy").lazyload({
+            threshold: 200,
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,74 @@
+package: ebook
+import:
+- package: github.com/afocus/captcha
+- package: github.com/aliyun/aliyun-oss-go-sdk
+- package: github.com/boombuler/barcode
+- package: github.com/dgrijalva/jwt-go
+- package: github.com/eclipse/paho.mqtt.golang
+- package: github.com/go-sql-driver/mysql
+- package: github.com/influxdata/influxdb
+- package: github.com/jmoiron/sqlx
+- package: github.com/justinas/alice
+- package: github.com/mattn/go-colorable
+- package: github.com/mattn/go-isatty
+- package: github.com/rs/rest-layer
+- package: github.com/rs/rest-layer-mongo
+- package: github.com/rs/rest-layer-mem
+- package: github.com/rs/rest-layer-hystrix
+- package: github.com/rs/xaccess
+- package: github.com/rs/xlog
+- package: github.com/spf13/cast
+- package: github.com/stretchr/testify/assert
+- package: github.com/valyala/fasttemplate
+- package: github.com/valyala/bytebufferpool
+- package: github.com/eclipse/paho.mqtt.golang
+- package: github.com/yosssi/gmq
+- package: github.com/nutzam/zgo                       # 提供一组 golang 的帮助函数集合
+- package: github.com/bitly/go-simplejson
+- package: github.com/BurntSushi/graphics-go
+  subpackages:
+  - graphics
+- package: github.com/labstack/echo
+  subpackages:
+  - middleware
+- package: github.com/chanxuehong/wechat.v2
+  subpackages:
+  - mp/core
+  - mp/menu
+  - mp/message/callback/request
+  - mp/message/callback/response
+
+- package: qiniupkg.com/api.v7
+- package: gopkg.in/redis.v5
+
+- package: golang.org/x/text
+  repo: https://github.com/golang/text.git
+  vcs: git
+  subpackages:
+    - encoding
+- package: golang.org/x/crypto
+  repo: https://github.com/golang/crypto.git
+  vcs: git
+  subpackages:
+  - bcrypt
+  - blowfish
+- package: golang.org/x/image
+  repo: https://github.com/golang/image.git
+  vcs: git
+  subpackages:
+  - math
+  - font
+- package: golang.org/x/net
+  repo: https://github.com/golang/net.git
+  vcs: git
+  subpackages:
+  - context
+  - http2/hpack
+  - internal/timeseries
+  - lex/httplex
+  - trace
+- package: golang.org/x/sys
+  repo: https://github.com/golang/sys.git
+  vcs: git
+  subpackages:
+  - unix

@@ -1,0 +1,68 @@
+{
+    "Server": {
+        "DomainName": "ifnfn.com",
+        "Hostname": "0.0.0.0",
+        "UseHTTP": true,
+        "UseHTTPS": false,
+        "HTTPPort": 10088,
+        "HTTPSPort": 443,
+        "CertFile": "tls/server.crt",
+        "KeyFile": "tls/server.key",
+        "Font": "font/comic.ttf",
+        "UploadPath": "./cache",
+        "DatabaseKey": "xxxxxxxxxxxxxxxxxxx",
+        "JWTSecretKey": "xxxxxxxxxxxxxxxxxxxxxx",
+        "Database": "mongodb",
+        "SuperClientUID": ""
+    },
+    "Mqtt": {
+        "Hostname": "mqtt.ifnfn.com",
+        "Port": 1883,
+        "Network": "tcp",
+        "ConnectTimeout": 60,
+        "PingRespTimeout": 60,
+        "KeepAlive": 10,
+        "SecretKey": "xxxxxxxxxxxxxxxxx",
+        "AdminAccessToken": "xxxxxxxxxxxxxxxxxx"
+    },
+    "Redis": {
+        "Hostname": "ifnfn.com",
+        "Port": 6379,
+        "Password": ""
+    },
+    "Aliyun": {
+        "Endpoint": "oss-cn-shanghai.aliyuncs.com",
+        "AccessKeyId": "xxxxxxxxxxxxxx",
+        "AccessKeySecret": "xxxxxxxxxxxxxxxxxxx",
+        "Bucket": "engrobot"
+    },
+    "Wechat": {},
+    "InfluxDB": {
+        "Hostname": "ifnfn.com",
+        "Port": 8086,
+        "Database": "Devices",
+        "Measurement": "logs"
+    },
+    "MongoDB": {
+        "Hostname": "127.0.0.1",
+        "Port": 27017,
+        "Database": "kindle"
+    },
+    "MongoDB1": {
+        "Hostname": "ds115583.mlab.com",
+        "Port": 15583,
+        "Username": "zzgmtv",
+        "Password": "xxxxxxxxxxxxxxx",
+        "Database": "kindle"
+    },
+    "Qiniu": {},
+    "Qcloud": {},
+    "MySQL": {
+        "Username": "root",
+        "Password": "xxxxxxxxxxxxxxxxxx",
+        "Name": "lightbox",
+        "Hostname": "ifnfn.com",
+        "Port": 3306,
+        "Parameter": "?parseTime=true"
+    }
+}
